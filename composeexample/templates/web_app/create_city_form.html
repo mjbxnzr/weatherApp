@@ -1,11 +1,13 @@
-
+{% load static %}
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/forms.css' %}">
 
-<form class="form">
-    {{form.as_p}}
-    <input type="text" placeholder="Username">
-    <input type="password" placeholder="Password">
-    <button type="submit" id="login-button">Login</button>
-</form>
+<div class="container">
+		<form class="form">
+            {{ form.as_p }}
+			<input type="text" placeholder="City Name">
+			<button type="submit" id="submit-save">Submit</button>
+		</form>
+</div>
 
 {% endblock content%}

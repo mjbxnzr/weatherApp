@@ -33,22 +33,22 @@
   <!-- Category -->
     <div class="category">
       <ul>
-        <li><a href="#!" class="active">City</a></li>
-        <li><a href="#!">Add city</a></li>
-        <li><a href="#!">Delete city</a></li>
-        <li><a href="#!">Edit city</a></li>
+        <li><a href="http://127.0.0.1:8000/web_app" class="active" onclick="click_category()">City</a></li>
+        <li><a href="#!" onclick="click_category()">Add city</a></li>
+        <li><a href="#!" onclick="click_category()">Delete city</a></li>
+        <li><a href="#!" onclick="click_category()">Edit city</a></li>
       </ul>
     </div>
   <!-- Appliances -->
     {% block table%}
-        {% include "web_app/create_city_form.html" %}
+        {% include "web_app/data_table.html" %}
     {% endblock %}
   </section>
 </div>
 
-<script src="{% static 'js/geoLocation.js' %}">
 
-</script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/geoLocation.js' %}"></script>
 <script src="{% static 'js/dateProcess.js' %}"></script>
 <a href="https://www.youtube.com/watch?v=URUPsrmtYfs" target="_blank" title="Watch me speed code this" style="position: fixed; bottom: 10px; right: 10px"><img src="http://co0kie.github.io/codepen/youtube.png" alt=""></a>
 {% endblock content%}
