@@ -14,7 +14,7 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     depends_on:
-      - postgres
+      - db
     ports:
       - "5555:80"
     environment:
