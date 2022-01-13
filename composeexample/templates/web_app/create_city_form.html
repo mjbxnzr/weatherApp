@@ -1,9 +1,11 @@
 
 {% block content %}
 
-<form>
+<form class="form">
     {{form.as_p}}
-    <input type = 'submit' values = 'Save'>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button type="submit" id="login-button">Login</button>
 </form>
 
 {% endblock content%}
