@@ -9,6 +9,8 @@ from web_app.services.weather_data_service import WeatherDataResultService
 from web_app.models.models import City
 from web_app.serializers.serializer import CitySerializer
 
+from web_app.forms import CityForm
+
 def states(request):
     return render(request,'web_app/data_table.html')
 
@@ -32,3 +34,17 @@ def get_city_list(request):
     orders = City.objects.all()
     serializer = CitySerializer(orders, many=True)
     return Response(serializer.data)
+
+
+def create_city(request):
+    form = CityForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+
+    
+    context = {
+        'form':form
+    }
+
+    return render(request, "web_app/create_city_form.html", context)
