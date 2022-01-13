@@ -1,0 +1,102 @@
+.outer-container {
+  background-color: #FFFFFF;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  margin: 50px auto;
+  width: 400px;
+  height: 700px;
+  box-sizing: border-box;
+  border-radius: 0.5em;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.outer-container:hover {
+  overflow-y: scroll;
+}
+
+.ui-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.brown {
+  background-color: #927C78;
+}
+
+.silver {
+  background-color: #DBDFD4;
+}
+
+.orange {
+  background-color: #F3BB72;
+}
+
+.pink {
+  background-color: #FF85A7;
+}
+
+.blue {
+  background-color: #7BECED;
+}
+
+.dark-blue {
+  background-color: #9CB4F0;
+}
+
+.green {
+  background-color: #B1DC76;
+}
+
+.purple {
+  background-color: #BD84D6;
+}
+
+p {
+  transition: 300ms ease-out;
+  margin: 0;
+}
+
+.ui-item {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  height: 150px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  width: 400px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5em;
+  transition: 300ms ease-out;
+}
+.ui-item:hover {
+  cursor: pointer;
+}
+.ui-item:hover p {
+  font-size: 1.5em;
+}
+.ui-item:hover .food-icon {
+  transform: rotate(-35deg);
+}
+
+.food-icon {
+  font-size: 4em;
+  transition: 300ms ease-out;
+}
+
+.ion-ios-arrow-forward {
+  color: white;
+  font-size: 1.5em;
+  transition: 100ms ease-out;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5em;
+}
