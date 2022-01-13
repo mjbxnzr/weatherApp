@@ -4,3 +4,4 @@ build:
 run:
   web: bundle exec puma -C config/puma.rb
   worker: python manage.py runserver 0.0.0.0:8000
+  image : web
