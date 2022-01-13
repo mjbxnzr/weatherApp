@@ -1,10 +1,10 @@
 from django import forms
 
-from web_app.models.model import City
+from web_app.models.models import City
 
 class CityForm(forms.ModelForm):
     class Meta:
         model = City
         fields = [
-            'City'
+            'Name'
         ]
