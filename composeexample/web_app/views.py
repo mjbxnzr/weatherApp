@@ -69,8 +69,49 @@ def create_city(request):
         return Response(e, content_type="application/json", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-    return Response({'r':'done'}, content_type="application/json", status=status.HTTP_200_OK)
+    return Response({'r':'Success'}, content_type="application/json", status=status.HTTP_200_OK)
 
+@api_view(['DELETE'])
+def remove_city(request):
+    delete_city_form = request.data
+    try:
+        check_duplicate = City.objects.filter(Name=delete_city_form["Name"]).exists()
+        if check_duplicate is False:
+            error = {
+                'error': 'City name do not exist'
+            }
+            return Response(error, content_type="application/json", status=status.HTTP_200_OK)
+        else:
+            City.objects.filter(Name=delete_city_form["Name"]).delete()
+
+
+
+    except Exception as e:
+        return Response(e, content_type="application/json", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+    return Response({'r':'Success'}, content_type="application/json", status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+def update_city(request):
+    print(request.data)
+    update_city_form = request.data
+    try:
+        check_id = City.objects.filter(pk=update_city_form["id"]).exists()
+        check_city_name = City.objects.filter(Name=update_city_form["Name"]).exists()
+        if check_city_name is False and check_id is True:
+            City.objects.filter(id=update_city_form["id"]).update(Name=update_city_form["Name"])
+        else:
+            error = {
+                'error':'City name already exist'
+            }
+            return Response(error, content_type="application/json", status=status.HTTP_200_OK)
+
+    except Exception as e:return Response(e, content_type="application/json", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    except TypeError as e:return Response(e, content_type="application/json", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+    return Response({'r':'Success'}, content_type="application/json", status=status.HTTP_200_OK)
 
 def city_form(request):
     return render(request, "web_app/page_2_dashboard.html")
