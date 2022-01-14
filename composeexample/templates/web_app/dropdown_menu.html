@@ -1,0 +1,17 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/dropdown.css' %}">
+<div class="container">
+		<span class="custom-dropdown big">
+        <select id="ddlViewBy">
+        <option id=1>Sherlock Holmes</option>
+        <option>The Great Gatsby</option>
+        <option>V for Vendetta</option>
+        <option>The Wolf of Wallstreet</option>
+        <option>Quantum of Solace</option>
+        </select>
+        </span>
+		<button type="submit" id="submit-save" onclick="Validate()">Submit</button>
+
+</div>
+{% endblock content%}
