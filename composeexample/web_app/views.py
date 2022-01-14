@@ -50,4 +50,4 @@ def create_city(request):
         'form':form
     }
 
-    return render(request, "web_app/create_city_form.html", context)
+    return render(request, "web_app/page_2_dashboard.html", context)
