@@ -108,7 +108,7 @@ header{
     margin-left: 40px;
   }
 
-.category li{
+.category a{
     font-size: 17px;
     font-weight: 600;
     color: #858d9f;
@@ -116,20 +116,20 @@ header{
 
   }
 
-.category li:hover{
+.category a:hover{
       color: #444;
     }
 
-.category li.active{
+.category a.active{
       color: #444;
     }
 
-.category li.active{
+.category a.active{
       position: relative;
 
     }
 
-.category li.active::before{
+.category a.active::before{
         content: '';
         width: 6px;
         height: 6px;
