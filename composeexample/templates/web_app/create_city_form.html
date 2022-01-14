@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{% static 'css/forms.css' %}">
 
 <div class="container">
-		<form class="form">
+		<form method="POST" class="form">
             {{ form.as_p }}
 			<input type="text" placeholder="City Name">
 			<button type="submit" id="submit-save">Submit</button>

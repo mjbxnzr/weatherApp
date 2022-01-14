@@ -40,7 +40,10 @@ def create_city(request):
     form = CityForm(request.POST or None)
 
     if form.is_valid():
-        form.save()
+        temp_form = form.cleaned_data
+        new_form = City(Name=temp_form["Name"],
+                        AuthorEmail=temp_form["AuthoEmail"])
+        new_form.save()
 
     
     context = {

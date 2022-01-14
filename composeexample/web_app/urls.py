@@ -4,5 +4,6 @@ urlpatterns = [
 path('/states',views.states,name='states'),
 path('',views.home,name='home'),
 path('/get_weather',views.get_weather,name='get_weather'),
-path('/cityList',views.get_city_list,name='cityList')
+path('/cityList',views.get_city_list,name='cityList'),
+path('/add_city',views.create_city,name='add_city')
 ]
