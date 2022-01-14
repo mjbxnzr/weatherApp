@@ -44,9 +44,11 @@
 }
 
 .green {
-  background-color: #B1DC76;
+  background-color: grey;
 }
-
+li.ui-item.green {
+    border-style: solid;
+}
 .purple {
   background-color: #BD84D6;
 }
@@ -56,6 +58,9 @@ p {
   margin: 0;
 }
 
+.ui-item i{
+  font-family: "Open Sans", sans-serif;
+}
 .ui-item {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;

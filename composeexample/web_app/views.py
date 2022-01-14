@@ -40,31 +40,24 @@ def get_city_list(request):
 def create_city(request):
     form = CityForm(request.POST or None)
     error = None
-    if form.is_valid():
-        temp_form = form.cleaned_data
-        try:
-            check_duplicate = City.objects.filter(Name=temp_form["Name"]).exists()
-            if check_duplicate is False:
-                new_form = City(Name=temp_form["Name"],
-                                AuthorEmail=temp_form["AuthorEmail"])
-                new_form.save()
-            else:
-                error = 'Valid'
+    create_city_form = request.data
+    try:
+        check_duplicate = City.objects.filter(Name=create_city_form["Name"]).exists()
+        if check_duplicate is False:
+            new_form = City(Name=create_city_form["Name"],
+                            AuthorEmail=create_city_form["AuthorEmail"])
+            new_form.save()
+        else:
+            error = {
+                'error':'City name already exist'
+            }
+            return Response(error, content_type="application/json", status=status.HTTP_200_OK)
 
-        except Exception as e:
-            error = e
-            print(e)
-        # new_form = City(Name=temp_form["Name"],
-        #                 AuthorEmail=temp_form["AuthorEmail"])
-        # new_form.save()
+    except Exception as e:
+        return Response(e, content_type="application/json", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    
-    context = {
-        'form':form,
-        'error':error
-    }
 
-    return render(request, "web_app/page_2_dashboard.html", context)
+    return Response({'r':'done'}, content_type="application/json", status=status.HTTP_200_OK)
 
 
 def city_form(request):
