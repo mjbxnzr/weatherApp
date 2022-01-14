@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 
 from rest_framework import status
 from rest_framework.decorators import (api_view,
@@ -35,19 +36,36 @@ def get_city_list(request):
     serializer = CitySerializer(orders, many=True)
     return Response(serializer.data)
 
-
+@api_view(['POST'])
 def create_city(request):
     form = CityForm(request.POST or None)
-
+    error = None
     if form.is_valid():
         temp_form = form.cleaned_data
-        new_form = City(Name=temp_form["Name"],
-                        AuthorEmail=temp_form["AuthoEmail"])
-        new_form.save()
+        try:
+            check_duplicate = City.objects.filter(Name=temp_form["Name"]).exists()
+            if check_duplicate is False:
+                new_form = City(Name=temp_form["Name"],
+                                AuthorEmail=temp_form["AuthorEmail"])
+                new_form.save()
+            else:
+                error = 'Valid'
+
+        except Exception as e:
+            error = e
+            print(e)
+        # new_form = City(Name=temp_form["Name"],
+        #                 AuthorEmail=temp_form["AuthorEmail"])
+        # new_form.save()
 
     
     context = {
-        'form':form
+        'form':form,
+        'error':error
     }
 
     return render(request, "web_app/page_2_dashboard.html", context)
+
+
+def city_form(request):
+    return render(request, "web_app/page_2_dashboard.html")

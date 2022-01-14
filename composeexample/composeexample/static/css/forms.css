@@ -44,14 +44,14 @@ background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
 		font-weight: 200;
 	}
 
-form{
+.form{
 	padding: 20px 0;
 	position: relative;
 	z-index: 2;
 
 }
 
-form input{
+.form input{
 		display: block;
 		appearance: none;
 		outline: 0;
@@ -72,18 +72,18 @@ form input{
 
 	}
 
-form input:focus{
+.form input:focus{
 			background-color: white;
 			width: 300px;
 
 			color: black;
 		}
 
-form input:hover{
+.form input:hover{
 			background-color: fade(white, 40%);
 		}
 
-form button{
+.form button{
 		appearance: none;
 		outline: 0;
 		background-color: white;
@@ -98,7 +98,7 @@ form button{
 
 	}
 
-form:hover{
+.form:hover{
 			background-color: rgb(245, 247, 249);
 		}
 

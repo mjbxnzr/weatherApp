@@ -1,12 +1,15 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/forms.css' %}">
-
+<script src="{% static 'js/form.js' %}"></script>
 <div class="container">
-		<form method="POST" class="form">
-            {{ form.as_p }}
-			<button type="submit" id="submit-save">Submit</button>
-		</form>
+	<div class="form">
+		<input type="text" name="Name" placeholder="City Name" maxlength="100" required="" id="id_Name">
+    			<input type="email" name="AuthorEmail" placeholder="Enter your email" maxlength="100" required="" id="id_AuthorEmail">
+			<button type="submit" id="submit-save" onclick="Validate()">Submit</button>
+
+	</div>
+
 </div>
 
 {% endblock content%}
