@@ -22,15 +22,19 @@ class OpenWeatherMap:
         urllib3.disable_warnings()
 
     def get_ondemand_data(self,request_info : dict):
-        url = self.OpenWeather_URL +"lat=" + str(request_info.get("lat"))+"&"\
-              +"lon=" + str(request_info.get("lon")) +"&"\
-              +"appid=" + self.appKey
+        if request_info.get("city") is None:
+            url = self.OpenWeather_URL +"lat=" + str(request_info.get("lat"))+"&"\
+                  +"lon=" + str(request_info.get("lon")) +"&"\
+                  +"appid=" + self.appKey
+        else:
+            url = self.OpenWeather_URL +"q="+request_info['city'] + "&" \
+                  + "appid=" + self.appKey
         print('######################## calling Open Weather API ######################')
-
+        print(url)
         data_response = self.http.request(method='POST',
                                         url=url,
                                         headers={
                                             "Content-Type": "application/json"
                                                    })
-
+        print(data_response.data)
         return Helper.getInstance().jsonStringtoPythonObj(data_response.data)

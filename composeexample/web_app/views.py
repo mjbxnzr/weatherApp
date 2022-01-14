@@ -30,6 +30,18 @@ def get_weather(request):
 
     return Response(weather_result, content_type="application/json", status=status.HTTP_200_OK)
 
+@api_view(['POST'])
+def by_city_name(request):
+    print(request.data)
+    location_info = request.data
+
+    try:
+        weather_result = WeatherDataResultService(location_info).process_location_info()
+    except Exception as e:
+        print(e)
+
+    return Response(weather_result, content_type="application/json", status=status.HTTP_200_OK)
+
 @api_view(['GET'])
 def get_city_list(request):
     orders = City.objects.all()
