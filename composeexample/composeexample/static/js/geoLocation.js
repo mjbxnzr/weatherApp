@@ -47,3 +47,18 @@ function runPyScript(input){
 
         return jqXHR.responseText;
     }
+
+
+function getLocationByCityName(input){
+
+    var jqXHR = $.ajax({
+            type: "POST",
+            url: "/web_app/get_weather/by_city_name",
+            async: false,
+            data: JSON.stringify(input),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+        });
+
+        return jqXHR.responseText;
+}

@@ -5,6 +5,8 @@
 //}
 var url = window.location.origin;
 
+//document.getElementById("button-city").addEventListener("click", getCityList());
+
 $("li a").click(function() {
 
 			// Select all list items
@@ -18,6 +20,7 @@ $("li a").click(function() {
 			// Add 'active' tag for currently selected item
 			this.classList.add("active");
 		});
+
 window.onload=function(){
 getLocation();
 getCityList();
@@ -52,8 +55,11 @@ function listItem(item){
     li_node.appendChild(i_node);
     i_node.appendChild(a_node);
     a_node.appendChild(textnode);
+    li_node.setAttribute('id',list);
+    li_node.setAttribute('onclick','getLocationByCityName(this.id)');
     document.getElementById('id-ui-list').appendChild(li_node);
 
 
   }
  }
+
