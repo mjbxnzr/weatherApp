@@ -28,17 +28,17 @@ body {
 }
 
 .custom-dropdown select {
-  background-color: #1abc9c;
-  color: #fff;
-  font-size: inherit;
-  padding: .5em;
-  padding-right: 2.5em;
-  border: 0;
-  margin: 0;
-  border-radius: 3px;
-  text-indent: 0.01px;
-  text-overflow: '';
-  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+    background-color: #dcdcdc;
+    color: black;
+    font-size: 18px;
+    padding: 0.5em;
+    padding-right: 2.5em;
+    border: 0;
+    margin: 0;
+    border-radius: 3px;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -webkit-appearance: button;
 }
 
 .custom-dropdown::before,

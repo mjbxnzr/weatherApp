@@ -22,7 +22,7 @@ $("li a").click(function() {
 		});
 
 window.onload=function(){
-getLocation();
+main_getLocation();
 getCityList();
 }
 
@@ -63,3 +63,20 @@ function listItem(item){
   }
  }
 
+function store (weatherLocationData) {
+  // (A) VARIABLES TO PASS
+//  var first = "Foo Bar",
+//      second = ["Hello", "World"];
+
+  // (B) SAVE TO SESSION STORAGE
+  // sessionStorage.setItem("KEY", "VALUE");
+  sessionStorage.setItem("first", weatherLocationData);
+  // session storage cannot store array and objects
+  // JSON encode before storing, convert to string
+  sessionStorage.setItem("weatherLocationData", JSON.stringify(weatherLocationData));
+
+  // (C) REDIRECT
+//  location.href = "1b-session.html";
+  // Opening new window works too
+  // window.open("1b-session.html");
+}

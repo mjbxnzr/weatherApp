@@ -98,6 +98,10 @@ background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
 
 	}
 
+button#submit-save:hover {
+    border: revert;
+}
+
 .form:hover{
 			background-color: rgb(245, 247, 249);
 		}

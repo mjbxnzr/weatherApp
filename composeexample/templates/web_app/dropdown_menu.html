@@ -1,8 +1,10 @@
 {% load static %}
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/forms.css' %}">
 <link rel="stylesheet" href="{% static 'css/dropdown.css' %}">
 <div class="container">
-		<span class="custom-dropdown big">
+		<div class="form">
+            <span class="custom-dropdown big">
         <select id="ddlViewBy">
         <option id=1>Sherlock Holmes</option>
         <option>The Great Gatsby</option>
@@ -12,6 +14,7 @@
         </select>
         </span>
 		<button type="submit" id="submit-save" onclick="Validate()">Submit</button>
+        </div>
 
 </div>
 {% endblock content%}

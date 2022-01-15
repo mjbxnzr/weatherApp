@@ -115,3 +115,6 @@ def update_city(request):
 
 def city_form(request):
     return render(request, "web_app/page_2_dashboard.html")
+
+def delete_city(request):
+    return render(request, "web_app/page_3_dashboard.html")
