@@ -118,3 +118,6 @@ def city_form(request):
 
 def delete_city(request):
     return render(request, "web_app/page_3_dashboard.html")
+
+def edit_city_form(request):
+    return render(request, "web_app/page_4_dashboard.html")

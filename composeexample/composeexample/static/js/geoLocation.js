@@ -29,7 +29,7 @@ function main_showPosition(position) {
   };
   weather_data = runPyScript(info)
   const weather_data_obj = JSON.parse(weather_data)
-  store(weather_data_obj)
+  store(weather_data_obj,"weatherLocation")
   y.innerHTML = `<strong>${weather_data_obj["location"]}, ${weather_data_obj["country"]}</strong>
                 <p>Current Location</p>`;
 

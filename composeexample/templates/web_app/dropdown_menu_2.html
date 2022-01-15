@@ -3,7 +3,9 @@
 <link rel="stylesheet" href="{% static 'css/forms.css' %}">
 <link rel="stylesheet" href="{% static 'css/dropdown.css' %}">
 <div class="container">
+
 		<div class="form">
+
             <span class="custom-dropdown big">
         <select id="ddlViewBy">
 <!--        <option id=1>Sherlock Holmes</option>-->
@@ -14,8 +16,9 @@
         </select>
 
         </span>
-                <span id="error"></span>
-		<button type="submit" id="submit-save" onclick="Delete()">Submit</button>
+            <input type="text" name="Name" placeholder="New City Name" maxlength="100" required="" id="id_Name">
+            <span id="error"></span>
+		<button type="submit" id="submit-save" onclick="">Submit</button>
         </div>
 
 </div>

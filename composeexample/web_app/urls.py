@@ -4,6 +4,7 @@ urlpatterns = [
 path('/states',views.states,name='states'),
 path('',views.home,name='home'),
 path('/delete_city',views.delete_city,name='delete_city'),
+path('/edit_city_form',views.edit_city_form,name='edit_city_form'),
 path('/get_weather',views.get_weather,name='get_weather'),
 path('/cityList',views.get_city_list,name='cityList'),
 path('/add_city',views.create_city,name='add_city'),
