@@ -4,7 +4,7 @@
 
  
 The features of this weather app:
-<li>1. Show current location weather</li>
-<li>2. Provide cities</li>
-<li>3. Add new city name</li>
-<li>4. Delete city </li>
+<li> Show current location weather</li>
+<li> Provide cities</li>
+<li> Add new city name</li>
+<li> Delete city </li>
