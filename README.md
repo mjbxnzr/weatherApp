@@ -5,6 +5,6 @@
  
 The features of this weather app:
 <li>1. Show current location weather</li>
-2. Provide cities
-3. Add new city name
-4. Delete city 
+<li>2. Provide cities</li>
+<li>3. Add new city name</li>
+<li>4. Delete city </li>
