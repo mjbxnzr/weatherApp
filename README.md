@@ -9,7 +9,7 @@ The features of this weather app:
 <li> Delete city </li>
 
 
-###User Guide
+<b>User Guide</b>
 <ol>
 <li>Click 'Allow' for your browser to access your current location in order to see the current weather of where you are</li>
 <li>You may choose the cities available from the list to see the current weather for your city of choice</li>
