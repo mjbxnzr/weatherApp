@@ -34,7 +34,7 @@ def get_weather(request):
 def by_city_name(request):
     print(request.data)
     location_info = request.data
-
+    print('testing')
     try:
         weather_result = WeatherDataResultService(location_info).process_location_info()
     except Exception as e:
