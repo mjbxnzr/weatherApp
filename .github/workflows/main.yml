@@ -5,10 +5,10 @@ on:
     branches:
       - main
 env:
-  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  PROJECT_ID: ${{ secrets_GCP_PROJECT_ID }}
   APP_ID: weatherapp
   RUN_REGION: asia-southeast1
-  SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
+  SA_KEY_JSON: ${{ secrets_GCP_SA_KEY_JSON }}
 jobs:
   deploy:
     name: Deploy to Cloud Run
@@ -21,8 +21,8 @@ jobs:
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
           version: "290.0.1"
-          service_account_key: ${{ secrets.GCP_SA_KEY_JSON }}
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets_GCP_SA_KEY_JSON }}
+          project_id: ${{ secrets_GCP_PROJECT_ID }}
 
       # Build and push image to Google Container Registry
       - name: Build
