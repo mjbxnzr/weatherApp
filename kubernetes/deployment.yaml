@@ -110,6 +110,19 @@ spec:
         - image: gcr.io/weatherapp-359204/github.com/muhdmujibrahman/weatherapp
           imagePullPolicy: IfNotPresent
           name: weatherapp-sha256-1
+          env:
+           - name: POSTGRES_NAME
+             value: postgres
+           - name: POSTGRES_PASSWORD
+             valueFrom:
+              secretKeyRef: 
+               key: postgres-password
+               name: my-release-postgresql
+             key: postgres-password
+           - name: POSTGRES_USER
+             value: postgres
+           - name: POSTGRES_HOST
+             value: my-release-postgresql
           resources:
             limits:
               cpu: 500m
