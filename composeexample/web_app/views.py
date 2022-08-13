@@ -121,3 +121,15 @@ def delete_city(request):
 
 def edit_city_form(request):
     return render(request, "web_app/page_4_dashboard.html")
+
+
+def page_not_found(request, *args, **argv):
+    response = render(request,'error_message/404.html')
+    response.status_code = 404
+    return response
+
+
+def handler500(request, *args, **argv):
+    response = render(request, 'error_message/500.html')
+    response.status_code = 500
+    return response
