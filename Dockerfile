@@ -19,5 +19,5 @@ ENV PYTHONUNBUFFERED=1
 # RUN pip install -r requirements.txt
 EXPOSE 8080:8080
 
-# ENTRYPOINT [ "bash","entrypoint.sh" ]
-CMD ["python", "composeexample/manage.py", "runserver","--insecure", "0.0.0.0:8080"]
+ENTRYPOINT [ "bash","entrypoint.sh" ]
+# CMD ["python", "composeexample/manage.py", "runserver","--insecure", "0.0.0.0:8080"]
