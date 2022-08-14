@@ -20,4 +20,4 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 8080:8080
 
 # ENTRYPOINT [ "bash","entrypoint.sh" ]
-CMD ["python", "composeexample/manage.py", "runserver","--insecure", "0.0.0.0:8000"]
+CMD ["python", "composeexample/manage.py", "runserver","--insecure", "0.0.0.0:8080"]
