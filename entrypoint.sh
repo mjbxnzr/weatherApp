@@ -1,3 +1,5 @@
 #! /bin/bash
 
-python composeexample/manage.py runserver 0.0.0.0:8000
+cd composeexample
+
+gunicorn --bind 0.0.0.0:8000 composeexample.wsgi
