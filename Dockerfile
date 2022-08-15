@@ -7,6 +7,8 @@ WORKDIR /code
 
 RUN apk add --no-cache --upgrade bash
 
+RUN apk upgrade zlib libtirpc libtirpc-conf
+
 RUN \
  apk add --no-cache postgresql-libs && \
  apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev && \
