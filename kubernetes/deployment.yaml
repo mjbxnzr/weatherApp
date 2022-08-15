@@ -111,6 +111,11 @@ spec:
           imagePullPolicy: IfNotPresent
           name: weatherapp-sha256-1
           env:
+           - name: SECRET-KEY
+             valueFrom:
+              secretKeyRef: 
+               key: SECRET-KEY
+               name: weatherapp-secret
            - name: POSTGRES_NAME
              value: postgres
            - name: POSTGRES_PASSWORD
