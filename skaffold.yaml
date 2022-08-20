@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: weatherapp
+build:
+  artifacts:
+    - image: gcr.io/weatherapp-359204/github.com/muhdmujibrahman/weatherapp
+      docker:
+        dockerfile: Dockerfile
+  tagPolicy:
+    sha256: {}
+deploy:
+  kubectl:
+    manifests:
+      - kubernetes/deployment.yaml

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "Kubernetes: Run/Debug",
+            "type": "cloudcode.kubernetes",
+            "request": "launch",
+            "skaffoldConfig": "${workspaceFolder}/skaffold.yaml",
+            "imageRegistry": "gcr.io/weatherapp-359204",
+            "watch": true,
+            "cleanUp": true,
+            "portForward": true
+        }
+    ]
+}
